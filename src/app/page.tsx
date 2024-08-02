@@ -2,94 +2,75 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const today = new Date();
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
+      <div className={styles.center}>
+        <h1>Hello, It’s Qian Here </h1>
+          <Image
+            className={styles.logo}
+            src="/illustration-no-bg.png"
+            alt="qiannyqian illustration"
+            width={180}
+            height={180}
+            priority
+          />
+      </div>
+
+      <div className={styles.links}>
+        <div className={styles.card}>
+          <a href="#about">
+            <h2>About</h2>
+          </a>
+        </div>
+       
+        <div className={styles.card}>
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://qiannyqian.hashnode.dev/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+            <h2>Blog</h2>
           </a>
         </div>
+
+        <div className={styles.card}>
+          <a
+            href="https://bio.link/qiannyqian"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2>Links</h2>
+          </a>
+        </div>
+        
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.content} id="#about">
+        <h3>About Me</h3>
+  
+        <p>Hi, I’m Hui Qian! I go by the moniker <code>qiannyqian</code> on the Internet, welcome to my website!</p>
+
+        <br/>
+
+        <p>I have been working in tech, specialising in front-end and web development, from small startups to mid-sized companies.</p>
+
+        <br/>
+
+        <p>When I’m not coding for work, you can find me reading vicariously on my Kindle, iPad or physical book, or taking photos or videos to make memories.
+        </p>
+
+        {/* <br/>
+
+        <p>Here’s all the tech I’ve touched:</p> */}
+
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <footer>
+        <p>&copy; {today.getFullYear()} qiannyqian | Made with <a href="https://nextjs.org/"  target="_blank"
+          rel="noopener noreferrer">NextJS</a></p>
+      </footer>
     </main>
   );
 }
